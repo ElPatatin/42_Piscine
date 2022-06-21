@@ -1,36 +1,22 @@
-#include <stdio.h>
 #include <unistd.h>
-#include <stdbool.h>
-
-void	ft_write(char c)
-{
-	write(1, &c, 1);
-}
-
-bool	ft_is_char_printable(char c)
-{
-	return (c >= 31 && c <= 126);
-}
 
 void	ft_putstr_non_printable(char *str)
 {
-	int		i;
+	int				i;
 	unsigned int	m;
 
 	i = 0;
-	while (true)
+	while (str[i])
 	{
 		m = str[i];
-		if (m == '\0')
-			break ;
-		if (ft_is_char_printable(m))
-			ft_write(m);
+		if (m >= 31 && m <= 126)
+			write(STDOUT_FILENO, &m, sizeof(char) * 1);
 		else
 		{
-			ft_write('\\');
-			ft_write("0123456789abcdef"[m / 16]);
-			ft_write("0123456789abcdef"[m % 16]);
+			write(STDOUT_FILENO, "\\", sizeof(char) * 1);
+			write(STDOUT_FILENO, "0123456789abcdef"[m / 16], sizeof(char) * 1);
+			write(STDOUT_FILENO, "0123456789abcdef"[m % 16], sizeof(char) * 1);
 		}
-		i++;
+		++i;
 	}
 }

@@ -43,7 +43,7 @@ void	ft_putnbr_base(int nbr, char *base)
 			write(STDOUT_FILENO, "-", sizeof(char) * 1);
 			nbr = -nbr;
 		}
-		else if (i > 10 && i <= 16)
+		else if (i > 10)
 			nbr = UINT_MAX + nbr + 1;
 	}
 	if (nbr >= i)

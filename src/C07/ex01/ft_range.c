@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <stdlib.h>
 
 // Creo mi funcion range.
@@ -6,7 +5,7 @@
 // La funcion debe devolver una array de todos los numeros entre el mínimo y el máximo, excluyendo a este.
 // Para realizar el tamaño el cual debe pasarse al malloc, solo hay que hacer una diferente entre el max y min.
 
-int		*ft_range(int max, int max)
+int		*ft_range(int min, int max)
 {
 	int	*tab;
 	int	i;
@@ -15,11 +14,9 @@ int		*ft_range(int max, int max)
 	if (min >= max)
 		return (NULL);
 	tab = (int *)malloc(sizeof(*tab) * (max - min));
-	while (max > min)
-	{
-		tab[i] = min;
-		i++;
-		min++;
-	}
+	if (!tab)
+		return (0);
+	while (max >= min)
+		tab[i++] = min++;
 	return (tab);
 }
