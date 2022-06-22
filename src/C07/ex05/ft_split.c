@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-static size_t  ft_strlen(char *s)
+static int  ft_strlen(char *s)
 {
     ssize_t i;
 
