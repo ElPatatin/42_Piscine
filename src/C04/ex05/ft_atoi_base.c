@@ -37,7 +37,7 @@ int		ft_atoi_base(char *str, char *base)
 	lbase = ft_cbase(base);
 	if (!base || lbase <= 1)
 		return (0);
-	while (*str == ' ' || (*str >= 9 && *str <= 13))
+	while (*str && (*str == ' ' || (*str >= 9 && *str <= 13)))
 		++str;
 	if (*str == '-')
 		negative = -1;

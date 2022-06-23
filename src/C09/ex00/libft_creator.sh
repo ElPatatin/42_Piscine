@@ -1,0 +1,1 @@
+cc -c  ft_utils.c && ar -rcs libft.a *.o

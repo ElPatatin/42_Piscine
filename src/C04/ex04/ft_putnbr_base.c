@@ -35,7 +35,7 @@ void	ft_putnbr_base(int nbr, char *base)
 
     i = ft_cbase(base);
     if (!base || i <= 1)
-    return ;
+    	return ;
 	if (nbr < 0)
 	{
 		if (i < 10)
