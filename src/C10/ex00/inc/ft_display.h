@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_boolean.h                                       :+:      :+:    :+:   */
+/*   ft_display.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/24 22:59:02 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/06/24 22:59:03 by cpeset-c         ###   ########.fr       */
+/*   Created: 2022/06/24 22:43:52 by cpeset-c          #+#    #+#             */
+/*   Updated: 2022/06/24 22:43:54 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_BOOLEAN_H
-# define FT_BOOLEAN_H
+#ifndef FT_DISPLAY_H
+# define FT_DISPLAY_H
+
+# define NOARG		(char *)"File name missing.\n"
+# define TMARG		(char *)"Too many arguments.\n"
+# define NOREAD		(char *)"Cannot read file.\n"
+# define BUF_SIZE	(int)42
 
 # include <unistd.h>
+# include <sys/stat.h>
+# include <sys/uio.h>
+# include <fcntl.h>
 
-# define TRUE		(int)1
-# define FALSE		(int)0
-# define EVEN(nbr)	((nbr % 2) == 0 ? TRUE : FALSE)
-# define SUCCESS	(int)0
-# define EVEN_MSG	(char *)"I have an even number of arguments.\n"
-# define ODD_MSG	(char *)"I have an odd number of arguments.\n"
-
-typedef int	t_bool;
-
-void	ft_putstr(char *str);
-t_bool	ft_is_even(int nbr);
+int	ft_putchar(char c);
+ints	ft_putstr(char *s);
 
 #endif

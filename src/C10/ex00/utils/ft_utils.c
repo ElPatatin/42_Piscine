@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_boolean.h                                       :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/24 22:59:02 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/06/24 22:59:03 by cpeset-c         ###   ########.fr       */
+/*   Created: 2022/06/24 22:44:15 by cpeset-c          #+#    #+#             */
+/*   Updated: 2022/06/24 22:44:16 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_BOOLEAN_H
-# define FT_BOOLEAN_H
+#include "../inc/ft_display.h"
 
-# include <unistd.h>
+int	ft_putchar(char c)
+{
+	ssize_t	bytes;
 
-# define TRUE		(int)1
-# define FALSE		(int)0
-# define EVEN(nbr)	((nbr % 2) == 0 ? TRUE : FALSE)
-# define SUCCESS	(int)0
-# define EVEN_MSG	(char *)"I have an even number of arguments.\n"
-# define ODD_MSG	(char *)"I have an odd number of arguments.\n"
+	bytes = write(STDOUT_FILENO, &c, sizeof(char));
+	return (bytes);
+}
 
-typedef int	t_bool;
+int	ft_putstr(char *s)
+{
+	ssize_t	bytes;
 
-void	ft_putstr(char *str);
-t_bool	ft_is_even(int nbr);
-
-#endif
+	bytes = 0;
+	while (*s)
+	{
+		bytes += ft_putchar(*s);
+		if (bytes == -1)
+			return (bytes);
+		++s;
+	}
+	return (bytes);
+}
