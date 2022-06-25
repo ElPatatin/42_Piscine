@@ -4,5 +4,4 @@
 *.out
 out
 .DS_Store
-main.*
 *.h.gch
