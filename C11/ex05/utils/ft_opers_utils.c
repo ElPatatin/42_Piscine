@@ -2,17 +2,12 @@
 
 void	addition(int x, int y)
 {
-	ft_putnbr(x - y);
+	ft_putnbr(x + y);
 }
 
 void	substraction(int x, int y)
 {
 	ft_putnbr(x - y);
-}
-
-void	multiplication(int x, int y)
-{
-	ft_putnbr(x * y);
 }
 
 void	division(int x, int y)
@@ -23,6 +18,11 @@ void	division(int x, int y)
 		return ;
 	}
 	ft_putnbr(x / y);
+}
+
+void	multiplication(int x, int y)
+{
+	ft_putnbr(x * y);
 }
 
 void	modular(int x, int y)
