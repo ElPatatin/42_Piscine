@@ -1,39 +1,5 @@
 #include "../inc/ft_tail.h"
 
-// Función de control de errores -> man errno
-// EACCES: permisos denegados.
-// EISDIR: es un directorio.
-// ENOENT: no existe dicho archivo o directorio.
-
-static	int	ft_error(char *s0, char *str)
-{
-	if (errno == EACCES)
-	{
-		ft_putstr(s0);
-		ft_putchar(':');
-		ft_putstr(str);
-		ft_putstr(NOPERM);
-		return (1);
-	}
-	else if (errno == EISDIR)
-	{
-		ft_putstr(s0);
-		ft_putchar(':');
-		ft_putstr(str);
-		ft_putstr(NOPDIR);
-		return (1);
-	}
-	else if (errno == ENOENT)
-	{
-		ft_putstr(s0);
-		ft_putchar(':');
-		ft_putstr(str);
-		ft_putstr(NOEXST);
-		return (1);
-	}
-	return (0);
-}
-
 static void	ft_stdin(void)
 {
 	char	buff[BUF_SIZE + 1];
@@ -47,7 +13,34 @@ static void	ft_stdin(void)
 	}
 }
 
-static void	ft_stdout(char *s0, char *str)
+
+int	main(int argc, char **argv)
+{
+	int	i;
+	int	fd;
+	
+	i = 0;
+	if (argc <= 1)
+		ft_stdin();
+	while (i < argc)
+	{
+		if((ft_check_param(argv[1], argv[2]) == 0))
+		{
+			ft_error(argv[0], argv[2]);
+			return(0);
+		}
+		if((fd = open(argv[i], O_RDONLY) == -1))
+		{
+			if(errno == 2)
+            	ft_error(argv[0], argv[i]);
+		}
+		else
+			ft_print_last_line(argv[i], argv[i], argc);
+		++i;
+	}
+}
+
+/*static void	ft_stdout(char *s0, char *str)
 {
 	char	buff[BUF_SIZE + 1];
 	ssize_t	bytes;
@@ -81,4 +74,4 @@ int	main(int argc, char **argv)
 			ft_stdout(basename(argv[0]), argv[i]);
 	ft_putchar('\n');
 	return (0);
-}
+}*/

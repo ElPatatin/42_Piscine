@@ -43,14 +43,14 @@ int	main(int argc, char **argv)
 			ft_putstr(NOREAD);
 			return (0);
 		}
-		idx = read(fd, buff, BUF_SIZE);
+		idx = read(fd, buff, BUFFER_SIZE);
 		while (idx)
 		{
 			buff[idx] = '\0';
 			bytes = ft_putstr(buff);
 			if (bytes == -1)
 				return (0);
-			idx = read(fd, buff, BUF_SIZE);
+			idx = read(fd, buff, BUFFER_SIZE);
 		}
 		close(fd);
 	}

@@ -13,17 +13,18 @@
 #ifndef FT_DISPLAY_H
 # define FT_DISPLAY_H
 
-# define NOARG		(char *)"File name missing.\n"
-# define TMARG		(char *)"Too many arguments.\n"
-# define NOREAD		(char *)"Cannot read file.\n"
-# define BUF_SIZE	(int)42
+# define NOARG			(char *)"File name missing.\n"
+# define TMARG			(char *)"Too many arguments.\n"
+# define NOREAD			(char *)"Cannot read file.\n"
+# define BUFFER_SIZE	(int)42
 
 # include <unistd.h>
 # include <sys/stat.h>
 # include <sys/uio.h>
+# include <sys/types.h>
 # include <fcntl.h>
 
 int	ft_putchar(char c);
-ints	ft_putstr(char *s);
+int	ft_putstr(char *s);
 
 #endif

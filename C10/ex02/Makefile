@@ -20,9 +20,11 @@ RM		= rm -f
 
 INCLUDE	= -I $(INC_DIR)
 
-SRCS	= ft_tail.c
+SRCS	= ft_tail.c \
+		ft_errors.c
 
-UTLS	= ft_utils.c
+UTLS	= ft_utils.c \
+		ft_utils2.c
 
 FILES	+= $(addprefix $(SRC_DIR), $(SRCS))
 FILES	+= $(addprefix $(UTL_DIR), $(UTLS))
