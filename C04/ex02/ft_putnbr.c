@@ -1,4 +1,15 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/27 18:28:23 by cpeset-c          #+#    #+#             */
+/*   Updated: 2022/06/27 18:28:25 by cpeset-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
 void	ft_write(char c)
@@ -16,7 +27,7 @@ void	ft_putnbr(int nb)
 {
 	long	i;
 	int		j;
-	char 	c[10];
+	char	c[10];
 
 	i = nb;
 	j = 0;
@@ -38,11 +49,4 @@ void	ft_putnbr(int nb)
 		ft_write(c[j]);
 		j--;
 	}
-}
-
-int	main(void)
-{
-	ft_putnbr(3478922);
-	ft_write('\n');
-	return (0);
 }

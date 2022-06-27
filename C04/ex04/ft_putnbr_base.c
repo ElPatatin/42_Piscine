@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/27 18:30:46 by cpeset-c          #+#    #+#             */
+/*   Updated: 2022/06/27 18:30:48 by cpeset-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <limits.h>
 #include <unistd.h>
 
-static int  ft_cbase(char *s)
+static int	ft_cbase(char *s)
 {
 	int		i;
 	int		j;
 	int		bytes;
 	char	*tmp;
-	
+
 	i = 0;
 	tmp = s;
 	while (s[i])
@@ -31,22 +43,24 @@ static int  ft_cbase(char *s)
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-    unsigned int    i;
+	int			i;
+	const char	*str;
 
-    i = ft_cbase(base);
-    if (!base || i <= 1)
-    	return ;
+	str = "0123456789ABCDEF";
+	i = ft_cbase(base);
+	if (!base || i <= 1)
+		return ;
 	if (nbr < 0)
 	{
-		if (i < 10)
+		if (i <= 10)
 		{
-			write(STDOUT_FILENO, "-", sizeof(char) * 1);
+			write(STDOUT_FILENO, "-", sizeof(char));
 			nbr = -nbr;
 		}
 		else if (i > 10)
 			nbr = UINT_MAX + nbr + 1;
 	}
 	if (nbr >= i)
-		ft_putnbr(nbr / i, base);
-	write(STDOUT_FILENO, "0123456789ABCDEF"[nbr % i], sizeof(char) * 1);
+		ft_putnbr_base(nbr / i, base);
+	write(STDOUT_FILENO, &str[nbr % i], sizeof(char));
 }

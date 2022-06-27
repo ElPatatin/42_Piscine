@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/27 18:09:13 by cpeset-c          #+#    #+#             */
+/*   Updated: 2022/06/27 18:09:31 by cpeset-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned int	i;
 

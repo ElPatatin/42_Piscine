@@ -6,20 +6,19 @@
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 17:40:24 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/05/20 12:33:28 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/06/27 18:14:03 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static unsigned int  ft_strlen(const char *s)
+static unsigned int	ft_strlen(const char *s)
 {
-	unsigned int    i;
+	unsigned int	i;
 
 	i = 0;
 	while (s[i])
 		i++;
 	return (i);
 }
-
 
 unsigned int	ft_strlcat(char *dest, const char *src, unsigned int dstsize)
 {
