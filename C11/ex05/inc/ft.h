@@ -15,8 +15,8 @@ int		ft_atoi(const char *str);
 
 void	addition(int x, int y);
 void	substraction(int x, int y);
+void	multi(int x, int y);
 void	division(int x, int y);
-void	multiplication(int x, int y);
 void	modular(int x, int y);
 
 #endif

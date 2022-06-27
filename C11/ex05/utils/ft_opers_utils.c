@@ -20,7 +20,7 @@ void	division(int x, int y)
 	ft_putnbr(x / y);
 }
 
-void	multiplication(int x, int y)
+void	multi(int x, int y)
 {
 	ft_putnbr(x * y);
 }

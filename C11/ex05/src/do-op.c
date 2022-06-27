@@ -5,7 +5,7 @@ static int	ft_check(char *op)
 	char	*is_valid;
 	ssize_t	i;
 
-	is_valid = "+-/*%";
+	is_valid = "+-*/%";
 	if (op[0] && op[1])
 		return (-1);
 	i = -1;
@@ -19,8 +19,8 @@ static void	ft_assing(void (*list[5])(int, int))
 {
 	list[0] = &addition;
 	list[1] = &substraction;
-	list[2] = &division;
-	list[3] = &multiplication;
+	list[2] = &multi;
+	list[3] = &division;
 	list[4] = &modular;
 }
 
