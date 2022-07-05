@@ -1,4 +1,15 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_combn.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/05 12:59:47 by cpeset-c          #+#    #+#             */
+/*   Updated: 2022/07/05 12:59:51 by cpeset-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
 void	ft_putstr(char *str)
@@ -8,7 +19,7 @@ void	ft_putstr(char *str)
 	i = 0;
 	while (str[i])
 	{
-		write(1, &str[i], 1);
+		write(STDOUT_FILENO, &str[i], sizeof(char));
 		i++;
 	}
 }
@@ -89,17 +100,17 @@ void	ft_print_combn(int n)
 		if (ft_check(str, n))
 		{
 			ft_putstr(str);
-			write(1, ", ", 2);
+			write(STDOUT_FILENO, ", ", sizeof(char) * 2);
 		}
 	}
 }
 
-int	main(void)
-{
-	int len;
+// int	main(void)
+// {
+// 	int len;
 
-	len = 2;
-	ft_print_combn(len);
-	write(1, "\n", 1);
-	return (0);
-}
+// 	len = 2;
+// 	ft_print_combn(len);
+// 	write(1, "\n", 1);
+// 	return (0);
+// }

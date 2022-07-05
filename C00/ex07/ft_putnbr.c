@@ -1,9 +1,20 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/05 12:59:37 by cpeset-c          #+#    #+#             */
+/*   Updated: 2022/07/05 12:59:41 by cpeset-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
 void	ft_write(char c)
 {
-	write(1, &c, 1);
+	write(STDOUT_FILENO, &c, sizeof(char));
 }
 
 void	ft_if_zero(int z)
@@ -40,9 +51,9 @@ void	ft_putnbr(int nb)
 	}
 }
 
-int	main(void)
-{
-	ft_putnbr(3478922);
-	ft_write('\n');
-	return (0);
-}
+// int	main(void)
+// {
+// 	ft_putnbr(3478922);
+// 	ft_write('\n');
+// 	return (0);
+// }

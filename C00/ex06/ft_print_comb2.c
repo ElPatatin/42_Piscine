@@ -1,9 +1,20 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/05 12:59:30 by cpeset-c          #+#    #+#             */
+/*   Updated: 2022/07/05 12:59:31 by cpeset-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
 void	ft_write(char a)
 {
-	write(1, &a, 1);
+	write(STDOUT_FILENO, &a, sizeof(char));
 }
 
 void	ft_print_comb2(void)
@@ -23,16 +34,16 @@ void	ft_print_comb2(void)
 			ft_write((j / 10) + '0');
 			ft_write((j % 10) + '0');
 			if (!(i == 98 && j == 99))
-				write(1, ", ", 2);
+				write(STDOUT_FILENO, ", ", sizeof(char) * 2);
 			j++;
 		}
 		i++;
 	}
 }
 
-int	main(void)
-{
-	ft_print_comb2();
-	ft_write('\n');
-	return (0);
-}
+// int	main(void)
+// {
+// 	ft_print_comb2();
+// 	ft_write('\n');
+// 	return (0);
+// }
