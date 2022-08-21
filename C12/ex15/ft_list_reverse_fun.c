@@ -32,7 +32,7 @@ void	ft_list_reverse_fun(t_list *beging_list)
 	unt		j;
 
 	i = 0;
-	j = l_size(beging_list);
+	j = ft_size(beging_list);
 	while (j > i)
 	{
 		tmp = ft_at(begin_list, i)->data;
